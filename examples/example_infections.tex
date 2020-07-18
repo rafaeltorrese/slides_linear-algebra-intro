@@ -1,0 +1,48 @@
+  \begin{frameExample}{Contagios}{}
+    \only<1>{%
+    En este ejemplo se muestra la forma en la cual se puede usar la multiplicación de matrices para modelar la manera en que se extiende una enfermedad contagiosa. Suponga que cuatro individuos han contraído esta enfermedad. Este grupo entra en contacto con seis personas de
+un segundo grupo. Estos contactos, llamados contactos directos, se pueden representar por una matriz de $4 \times 6$. En seguida se da un ejemplo de este tipo de matrices.
+
+\[
+  \bm{A} =%
+  \begin{pmatrix}
+0&1&0&0&1&0\\
+1&0&0&1&0&1\\
+0&0&0&1&1&0\\
+1&0&0&0&0&1\\
+\end{pmatrix}
+\]
+}%
+
+\only<2>{%
+  Ahora suponga que un tercer grupo de cinco personas tiene varios contactos directos con individuos del segundo grupo. Esto también se puede representar mediante una matriz. \alert{Matriz de contacto directo}: segundo y tercer grupos
+
+  \[\bm{B} = %
+\begin{pmatrix}
+  0&0&1&0&1\\
+  0&0&0&1&0\\
+  0&1&0&0&0\\
+  1&0&0&0&1\\
+  0&0&0&1&0\\
+  0&0&1&0&0\\
+\end{pmatrix}
+\]
+
+Calcular en número de contactos indirectos entre las personas del grupo 1 y grupo 3.
+}
+
+
+
+\begin{onlyenv}<3>
+  \lstinputlisting[firstline=3]{scriptsLinAlg/05_example-infections.py}
+\end{onlyenv}
+
+\end{frameExample}
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../slides"
+%%% End:

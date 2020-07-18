@@ -1,0 +1,82 @@
+%% Ipython notebook
+\usepackage{xcolor}
+\usepackage[many]{tcolorbox}
+\tcbuselibrary{listings}
+\definecolor{light-gray}{gray}{0.95}
+
+% the space reserved between for the ``In'' numbers and the code
+\newlength\inwd
+\setlength\inwd{1.3cm}
+
+\newlength\outwd
+\setlength\outwd{1.5cm}
+\newcounter{ipythcntr}
+
+% \newtcblisting{ipythonnb}[1][\theipythcntr]{
+\newtcblisting{ipythonnb}[1][]{
+  enlarge left by=\inwd,
+  width=\linewidth-\inwd,
+  enhanced,
+  boxrule=0.4pt,
+  colback=light-gray,
+  listing only,
+  top=0pt,
+  bottom=0pt,
+  left=3pt,
+  overlay={
+    \node[
+      anchor=north east,
+      text width=\inwd,
+      font=\footnotesize\ttfamily\color{blue!50!black},
+      inner ysep=2mm,
+      inner xsep=0pt,
+      outer sep=0pt
+      ] 
+      at (frame.north west)
+      {\stepcounter{ipythcntr}In [#1]:};
+    },
+    listing options={
+    basicstyle=\scriptsize\ttfamily,
+    %basicstyle=\footnotesize\fontfamily{fvm}\selectfont,
+    language=python,
+    escapechar=¢,
+    showstringspaces=false,
+    upquote=false,
+    keywordstyle=\color{keywords},
+    commentstyle=\color{comments}\emph
+  }
+}
+
+%%
+% \newtcblisting{ipythonnb2}[1][\theipythcntr]{
+\newtcblisting{ipythonnb2}[1][]{
+  enlarge left by=\inwd,
+  width=\linewidth-\inwd,
+  enhanced,
+  boxrule=0.4pt,
+  colback=light-gray,
+  listing only,
+  top=0pt,
+  bottom=0pt,
+  left=3pt,
+  overlay={
+    \node[
+      anchor=north east,
+      text width=\outwd,
+      font=\footnotesize\ttfamily\color{red!60!black},
+      inner ysep=2mm,
+      inner xsep=0pt,
+      outer sep=0pt
+      ] 
+      at (frame.north west)
+      {\stepcounter{ipythcntr}Out [#1]:};      
+    },
+    listing options={
+    %basicstyle=\footnotesize\fontfamily{fvm}\selectfont,
+    basicstyle=\scriptsize\ttfamily,
+    language=python,
+    escapechar=¢,
+    showstringspaces=false,
+    upquote=false
+  }
+}
