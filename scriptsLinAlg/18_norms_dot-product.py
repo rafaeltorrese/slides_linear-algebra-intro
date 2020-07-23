@@ -7,6 +7,9 @@ import seaborn as sns
 v1 = np.array([0,3])
 v2 = np.array([3,3])
 
+# v1 = np.array([0,1])
+# v2 = np.array([1,0])
+
 plt.quiver([0,0],
            [0,0],
            [v1[0], v2[0]],

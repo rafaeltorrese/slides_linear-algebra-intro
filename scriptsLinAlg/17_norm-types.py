@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 import  seaborn as sns
 
 v1 = np.array([1,2,0, 5, 6, 0])
-print(np.linalg.norm(v1, ord=0))
+print('\n Zero Norm: ', np.linalg.norm(v1, ord=0))
 v2 = np.array([1,-1,1,-1,1])
-print(np.linalg.norm(v2, ord=1))
+print('\n Norm One: ', np.linalg.norm(v2, ord=1))
 v3 = np.array([4,3])
-print(np.linalg.norm(v3, ord=2))
+print('\n Euclidean Norm', np.linalg.norm(v3, ord=2))
 print(np.linalg.norm(v3, ord=2)**2)
 print(v3.dot(v3))
 

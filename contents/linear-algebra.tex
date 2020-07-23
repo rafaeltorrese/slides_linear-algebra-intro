@@ -136,6 +136,9 @@ presupuesto \$560 000, \$10 000 y \$35 000. Los totales por presupuesto son los 
     \end{onlyenv}
   \end{frame}
 
+
+  \section{Matrices}
+  
   \begin{frame}[t]{Suma de Matrices (Broadcasting)}
     \lstinputlisting{scriptsLinAlg/03_sum_broadcasting.py}
   \end{frame}
@@ -163,7 +166,7 @@ $
 }  
   \end{frame}
 
-\section{Matrices}
+
 \label{sec:matrix-operations}
 
   \begin{frame}{Producto Interno de dos Matrices}{}
@@ -584,9 +587,21 @@ $.
       \lstinputlisting[firstline=25]{scriptsLinAlg/20_orthogonal.py}
     \end{columns}
   \end{onlyenv}
+    \begin{onlyenv}<3>
+    \begin{columns}[t]
+      \column{0.5\textwidth}
+      \lstinputlisting[firstline=3,lastline=19]{scriptsLinAlg/21_orthonormal.py}
+      \column{0.5\textwidth}
+      \lstinputlisting[firstline=21]{scriptsLinAlg/21_orthonormal.py}
+    \end{columns}
+  \end{onlyenv}
 
 \end{frame}
 
+\begin{frame}{Determinante y Traza}
+  \only<1>{\lstinputlisting[firstline=3]{scriptsLinAlg/22_trace.py}}
+  \only<2>{\lstinputlisting[firstline=3]{scriptsLinAlg/23_determinant.py}}
+\end{frame}
 
 %%% Local Variables:
 %%% mode: latex
