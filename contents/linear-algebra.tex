@@ -462,11 +462,86 @@ $, $\bm{v}_2 =
 \end{frame}
 
 \begin{frame}{¿Existe la Inversa de Una Matriz?}
+\only<1>{%
   Una matriz es singular si tiene un vector linealmente dependiente en sus filas o columnas. Si removemos el vector linealmente independiente de la matriz, la matriz deja de ser cuadrada.
   
   \lstinputlisting[firstline=3]{scriptsLinAlg/15_singular.py}
+}
+
+\begin{block}<only@2>{ Valor característico y vector característico}\justifying
+  Sea $A$ una matriz de $n \times n$ con componentes reales. El número $\lambda$ (real o complejo) se denomina \alert{valor característico} de $A$ si existe un vector diferente de cero $\bm{v}$ en $\mathbb{C}^n$ tal que \[\bm{Av} = \bm{\lambda v} \]
+
+  El vector $\bm{v} \neq \bm{0}$ se denomina \alert{vector característico} de $A$ correspondiente al \alert{valor característico} de $\lambda$
+\end{block}
+
+\begin{exampleblock}<only@3>{Ejemplo}\justifying
+  Sea $A =
+  \begin{pmatrix}
+    10 & -18 \\
+    6 & -11 \\
+  \end{pmatrix}
+$. Entonces $A
+\begin{pmatrix}
+  2\\
+  1\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+    10 & -18 \\
+    6 & -11 \\
+  \end{pmatrix}
+  \begin{pmatrix}
+  2\\
+  1\\
+\end{pmatrix}
+=
+  \begin{pmatrix}
+  2\\
+  1\\
+\end{pmatrix}
+$. Así, $\lambda = 1$ es un valor característico de $A$ con el correspondiente vector característico $\bm{v_1} =
+\begin{pmatrix}
+  2\\
+  1
+\end{pmatrix}
+$
+\end{exampleblock}
+\begin{exampleblock}<only@4>{Otro ejemplo de Vectores y Valores Propios} \justifying
+  $A
+\begin{pmatrix}
+  3\\
+  2\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+    10 & -18 \\
+    6 & -11 \\
+  \end{pmatrix}
+  \begin{pmatrix}
+  3\\
+  2\\
+\end{pmatrix}
+=
+  \begin{pmatrix}
+  -6\\
+  -4
+\end{pmatrix}
+= -2
+  \begin{pmatrix}
+  3\\
+  2
+\end{pmatrix}
+$, de modo que $\lambda_2 = -2$ es un valor característico (propio) de $A$ con el correspondiente vector característico (propio) $\bm{v}_2 =
+\begin{pmatrix}
+  3\\
+  2
+\end{pmatrix}
+$.
+\end{exampleblock}
 \end{frame}
 
+
+ 
 \section{Normas}
 \label{sec:norms}
 
@@ -492,8 +567,26 @@ $, $\bm{v}_2 =
 \end{frame}
 
 \begin{frame}{La matriz diagonal y la matriz simétrica}
-  
+\lstinputlisting[firstline=3]{scriptsLinAlg/19_diagonal-symmetric.py}
 \end{frame}
+
+\begin{frame}{Vectores ortogonales y  Matrices Ortogonales}
+  
+  \begin{block}<only@1>{Matriz Ortogonal}\justifying
+    Una matriz de $Q$ de $n\times n$ se llama \alert{ortogonal} si $Q$ es invertible y \[Q^{-1} = Q^{T} \]. Observe que si $Q^{-1} = Q^{T}$, entonces $Q^TQ = I$
+  \end{block}
+
+  \begin{onlyenv}<2>
+    \begin{columns}[t]
+      \column{0.5\textwidth}
+      \lstinputlisting[firstline=3,lastline=23]{scriptsLinAlg/20_orthogonal.py}
+      \column{0.5\textwidth}
+      \lstinputlisting[firstline=25]{scriptsLinAlg/20_orthogonal.py}
+    \end{columns}
+  \end{onlyenv}
+
+\end{frame}
+
 
 %%% Local Variables:
 %%% mode: latex
