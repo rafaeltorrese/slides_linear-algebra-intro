@@ -4,8 +4,6 @@
 y = 3x + 5
 y = 2x + 3
 
-. 3x 2 7y 5 25
-4x 2 3y 5 22
 '''
 
 import numpy as np

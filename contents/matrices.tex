@@ -1,0 +1,142 @@
+  \section{Matrices}
+  
+  \begin{frame}[t]{Suma de Matrices (Broadcasting)}
+    \lstinputlisting{scriptsLinAlg/03_sum_broadcasting.py}
+  \end{frame}
+
+
+  \begin{frame}{Producto Interno}
+    \begin{onlyenv}<1>
+      \lstinputlisting{scriptsLinAlg/04_dotproduct.py}    
+    \end{onlyenv}
+
+    \only<2>{%
+      Suponga que un fabricante produce cuatro artículos. Su demanda está dada por el vector de demanda $\bm{d} =
+      \begin{pmatrix}
+    30 & 20 & 40 & 10    
+      \end{pmatrix}
+$ (una matriz de $1 \times 4$). El precio por unidad que recibe el fabricante por los artículos está dado por el vector de precios $\bm{p} =
+\begin{pmatrix}
+   \$20 \\
+   \$15 \\
+   \$18 \\
+   \$40
+\end{pmatrix}
+$
+(una matriz de $4 \times 1$). Si se cumple la demanda, ¿cuánto dinero recibirá el fabricante?           
+}  
+  \end{frame}
+
+
+\label{sec:matrix-operations}
+
+  \begin{frame}{Producto Interno de dos Matrices}{}
+
+    \begin{columns}[t]
+      \column{0.5\textwidth }
+          Calcular $\bm{AB}$ y $\bm{BA}$. Comentar
+    
+          \begin{flalign*}
+      \bm{A} &= %
+      \begin{pmatrix}
+         2&  0& -3\\
+         4&  1&  5\\
+       \end{pmatrix}
+       \\[3mm]
+      \bm{B} &= %
+      \begin{pmatrix}
+        7& -1&  4&  7\\
+        2&  5&  0& -4\\
+        -3&  1&  2&  3\\
+      \end{pmatrix}
+    \end{flalign*}
+
+    
+    
+    \column{0.5\textwidth }
+    \lstinputlisting[firstline=3]{scriptsLinAlg/05_dotproduct.py}
+    \end{columns}
+
+
+    
+  \end{frame}
+  
+\input{examples/example_infections}
+
+
+\begin{frame}{Propiedades de las matrices}{}
+  
+  \begin{columns}
+    \column{0.7\textwidth}
+      \begin{enumerate}[i)] \justifying \parskip3mm
+  \item<only@1,2> \alert{Ley asociativa} $A(BC) = (AB)C$ 
+  \item<only@1,3> \alert{Ley distributiva} $A(B + C) = AB + AC$ 
+  \item<only@1,4> \alert{Ley conmutativa} $AB = BA$ 
+  \end{enumerate}
+  \column{0.4\textwidth}
+  \only<1>{\lstinputlisting[firstline=3,lastline=19]{scriptsLinAlg/06_matrix-properties.py}}
+  \only<2>{\lstinputlisting[firstline=21,lastline=23]{scriptsLinAlg/06_matrix-properties.py}}
+  \only<3>{\lstinputlisting[firstline=26,lastline=28]{scriptsLinAlg/06_matrix-properties.py}}
+  \only<4>{\lstinputlisting[firstline=30,lastline=46]{scriptsLinAlg/06_matrix-properties.py}}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Transposición de Producto de Matrices}
+  Existe una propiedad que nos dice: \[ (AB)^{T} = B^T A^T \]
+
+  \begin{columns}
+    \column{0.5\textwidth}
+  \begin{align*}
+    \bm{A} & =%
+             \begin{pmatrix}
+               7&  1\\ 
+               2& -3\\ 
+               4&  8\\
+             \end{pmatrix}
+    \\
+    \bm{B} &=%
+             \begin{pmatrix}
+               1& 6 \\
+               -2& 3 \\
+             \end{pmatrix}
+    \\
+    \bm{AB}^T &= %
+                \begin{pmatrix}
+                  5 &  8& -12\\
+                  45&   3&  48\\
+                \end{pmatrix}
+  \end{align*}
+  
+  \column{0.5\textwidth}
+  \begin{align*}
+    \bm{B}^T &=%
+               \begin{pmatrix}
+                 1& -2 \\
+                 6& 3 \\
+               \end{pmatrix}
+    \\
+       \bm{A}^T & =%
+             \begin{pmatrix}
+               7&  2& 4 \\ 
+               1& -3& 8 \\ 
+             \end{pmatrix}
+    \\
+    \bm{B}^T\bm{A}^T &= %
+                       \begin{pmatrix}
+                         1& -2 \\
+                         6& 3 \\
+                       \end{pmatrix}
+    \begin{pmatrix}
+      7&  2& 4 \\ 
+      1& -3& 8 \\ 
+    \end{pmatrix}
+  \end{align*}
+  \end{columns}
+Comprobar con Python
+\end{frame}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../slides"
+%%% End:
